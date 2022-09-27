@@ -16,12 +16,11 @@ import ErrorBoundry from "../components/ErrorBoundry";
   onSearchChange = (event) => {
     this.setState({searchfield: event.target.value})
   }
+    // fetch('http://localhost:3000/prosgett')
   componentDidMount() {
     fetch('https://powerful-peak-90430.herokuapp.com/prosgett')
-    // fetch('http://localhost:3000/prosgett')
-    .then(response=> response.json())
+    .then(response => response.json())
     .then(pros => this.setState({pros: pros}))
-    .then(console.log(this.pros));
   }
   render(){
     const {pros, searchfield } = this.state;
